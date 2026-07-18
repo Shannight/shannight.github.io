@@ -57,7 +57,7 @@ return Math.round(Math.random() * (max - min)) + min;
 }
 function MoveFox() {
 foxId.style.left = GetRandom(0, 500) + "px";
-foxId.style.top = GetRandom(0, 500) + "px";
+foxId.style.top = GetRandom(0, 430) + "px";
 }
 var moveFoxItvId = setInterval(MoveFox, 1000);
 
@@ -92,3 +92,15 @@ document.addEventListener("keydown",function(evt){
 	foxId.classList.remove("anim1");
 }
 });
+
+/* Full screen */
+const btnFS=document.querySelector("#btnFS");
+const btnWS=document.querySelector("#btnWS");
+btnFS.addEventListener("click",enterFullscreen);
+btnWS.addEventListener("click",exitFullscreen);
+function enterFullscreen() { //must be called by user generated event
+document.documentElement.requestFullscreen();
+}
+function exitFullscreen() {
+document.exitFullscreen();
+}

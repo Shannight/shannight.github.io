@@ -19,9 +19,9 @@ nav ul{display:none;}
 .menuShow{display:block;}
 
 /*fox*/
-#foxId {position: relative;width:10vw}
+#foxId {position: relative;width:15vw}
 
-#foxId {position: relative;width:10vw;
+#foxId {position: relative;width:15vw;
 transition: all 0.5s;
 }
 #foxId.shrink{width:5vw;opacity: 0;}
@@ -33,3 +33,9 @@ transition: all 0.5s;
 100%{rotate:270deg}
 }
 #foxId.anim1{animation: foxFrames 1s;}
+
+/*Qrcode*/
+@media (max-width:800px){ /*at mobile size*/
+#qrCodeImg{display:none;} /*hide QR code */
+div::after{content:"(mobile)";}/*append text 'mobile’ */
+}
