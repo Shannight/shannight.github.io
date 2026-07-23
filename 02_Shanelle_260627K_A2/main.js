@@ -3,6 +3,7 @@ const page1btn=document.querySelector("#page1btn");
 const page2btn=document.querySelector("#page2btn");
 const page3btn=document.querySelector("#page3btn");
 const page4btn=document.querySelector("#page4btn");
+const page5btn=document.querySelector("#page5btn");
 var allpages=document.querySelectorAll(".page");
 
 
@@ -32,6 +33,9 @@ page3btn.addEventListener("click", function () {
 page4btn.addEventListener("click", function () {
 	show(4);
 });
+page5btn.addEventListener("click", function () {
+	show(5);
+});
 hideall();
 
 /*HamMenu */
@@ -59,11 +63,12 @@ function MoveFox() {
 foxId.style.left = GetRandom(0, 500) + "px";
 foxId.style.top = GetRandom(0, 430) + "px";
 }
+/*in validator it said "'moveFoxItvId' is defined but never used." but it is to make the fox move*/
 var moveFoxItvId = setInterval(MoveFox, 1000);
 
 const scoreBox=document.getElementById("scoreBox");
 
-const popAudio = new Audio("fox.mp3");
+const popAudio = new Audio("audio/fox.mp3");
 //create an new Audio Object using sound file
 
 var score=0; //to track how many clicks
@@ -103,4 +108,30 @@ document.documentElement.requestFullscreen();
 }
 function exitFullscreen() {
 document.exitFullscreen();
+}
+
+/*Quiz*/
+const btnSubmit=document.querySelector("#btnSubmit");
+btnSubmit.addEventListener("click",CheckAns);
+const scorebox=document.querySelector("#scorebox");
+var q1,q2,q3,q4,score=0;
+function CheckAns(){
+score=0; //reset score to 0, check ans and give score if correct
+//read the value of the selected radio button for q1
+q1=document.querySelector("input[name='q1']:checked").value;
+console.log(q1); //check q1 value retrieved
+if(q1=="Cheese")score++;
+//read the value of the selected radio button for q2
+q2=document.querySelector("input[name='q2']:checked").value;
+console.log(q2); //check q2 value retrieved
+if(q2=="Scream")score++;
+scorebox.innerHTML="Score:"+score;
+q3=document.querySelector("input[name='q3']:checked").value;
+console.log(q3); //check q3 value retrieved
+if(q3=="Islandfox")score++;
+scorebox.innerHTML="Score:"+score;
+q4=document.querySelector("input[name='q4']:checked").value;
+console.log(q4); //check q4 value retrieved
+if(q4=="Eurasia")score++;
+scorebox.innerHTML="Score:"+score;
 }

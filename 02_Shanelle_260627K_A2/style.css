@@ -4,6 +4,7 @@ nav ul li{display:inline;}
 #page2{background:#FFC7E6}
 #page3{background:#FFD8ED}
 #page4{background:#FFE3F2}
+#page5{background:#FFE3F2}
 
 /*CSS for responsive menu*/
 #hamIcon{display:none;}
@@ -14,6 +15,7 @@ nav ul li{display:block;}
 #hamIcon{display:block;}
 /*hide the menu item list*/
 nav ul{display:none;}
+.page{width:100%;border:1px solid pink}
 }
 /*to unhide menu items*/
 .menuShow{display:block;}
@@ -34,8 +36,15 @@ transition: all 0.5s;
 }
 #foxId.anim1{animation: foxFrames 1s;}
 
+/*game bg*/
+div{
+background-image: url("images/desert.jpg");
+background-size: cover;
+}
+
 /*Qrcode*/
 @media (max-width:800px){ /*at mobile size*/
 #qrCodeImg{display:none;} /*hide QR code */
 div::after{content:"(mobile)";}/*append text 'mobile’ */
 }
+
